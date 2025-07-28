@@ -1,7 +1,10 @@
 {
-    
     "AAPL": {
-        "quantity": 20,
-        "purchase_price": 1500.0
+        "quantity": 15,
+        "purchase_price": 200.0
+    },
+    "AAP": {
+        "quantity": 10,
+        "purchase_price": 55.0
     }
 }

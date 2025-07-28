@@ -62,3 +62,13 @@ class Visualizer:
             print(f"📊 Volume chart saved: {filename}")
 
         return plt
+    
+    def plot_stock_history(self,history_df, ticker):
+     plt.figure(figsize=(10, 4))
+     plt.plot(history_df.index, history_df['Close'], color='skyblue', linewidth=2)
+     plt.title(f"{ticker.upper()} - 1 Year Price History", fontsize=14)
+     plt.xlabel("Date")
+     plt.ylabel("Close Price ($)")
+     plt.grid(True)
+     plt.tight_layout()
+     return plt
