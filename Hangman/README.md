@@ -107,24 +107,44 @@ python gui.py
 ---
 
 ### 🎯 Right & Wrong Guess Feedback
-<p align="center">
-  <img src="screenshots/right-guess.jpg" width="450">
-  <img src="screenshots/wrong-guess.jpg" width="450">
-</p>
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="screenshots/right-guess.jpg" width="420"><br>
+      <em>Correct Guess</em>
+    </td>
+    <td align="center">
+      <img src="screenshots/wrong-guess.jpg" width="420"><br>
+      <em>Wrong Guess</em>
+    </td>
+  </tr>
+</table>
+>
 
 ---
 
 ### 🏆 Win & ❌ Lose Screens
-<p align="center">
-  <img src="screenshots/win-screen.jpg" width="450">
-  <img src="screenshots/lose-screen.jpg" width="450">
-</p>
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="screenshots/win-screen.jpg" width="420"><br>
+      <em>Win Screen</em>
+    </td>
+    <td align="center">
+      <img src="screenshots/lose-screen.jpg" width="420"><br>
+      <em>Lose Screen</em>
+    </td>
+  </tr>
+</table>
+
 
 ---
 
 ### ⚠️ Invalid Input Handling
 <p align="center">
-  <img src="screenshots/invalid-input.jpg" width="700">
+  <img src="screenshots/invalid-input-1.jpg" width="700">
   <img src="screenshots/invalid-input-2.jpg" width="700">
 </p>
 
