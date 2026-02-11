@@ -108,13 +108,22 @@ streamlit run app.py
 ## 🎨 Screenshots
 
 -   📂 Unorganized Folder
--   🖥 Terminal Command
--   🌐 Streamlit Interface
--   📤 File Upload
--   📁 Organized Folder
--   🗑 Deleted Empty Folders
+![Unorganized Folder](screenshots/unorganised-folder.jpg)
 
-*(Add screenshots here for better presentation)*
+-   🖥 Terminal Command
+![Terminal Command](screenshots/Terminal-Command-1.jpg)
+![Terminal Command](screenshots/Terminal-Command-2.jpg)
+
+-   🌐 Streamlit Interface
+![Streamlit Browser](screenshots/Streamlit-Browser.jpg)
+
+-   📤 File Upload
+![Upload files](screenshots/Upload-files-1.jpg)
+![Upload files](screenshots/Upload-files-2.jpg)
+
+-   📁 Organized Folder
+![Organized Folder](screenshots/organised-folder.jpg)
+-   🗑 Deleted Empty Folders
 
 ------------------------------------------------------------------------
 
