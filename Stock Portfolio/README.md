@@ -104,6 +104,18 @@ streamlit run dashboard.py
 -   Cloud deployment
 
 ------------------------------------------------------------------------
+## 🎨 Screenshots
+
+
+<p align="center">
+  <img src="screenshots/sample-screen-1.jpg" width="700">
+  <img src="screenshots/sample-screen-2.jpg" width="700">
+  <img src="screenshots/sample-screen-3.jpg" width="700">
+  <img src="screenshots/sample-screen-4.jpg" width="700">
+</p>
+
+
+---
 
 ## 🧑‍💻 Author
 

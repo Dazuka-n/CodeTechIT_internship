@@ -90,13 +90,43 @@ python gui.py
 
 ## 🎨 Screenshots
 
--   🖥 Terminal Command
--   🎬 Splash Screen
--   🎯 Right & Wrong Guess Feedback
--   🏆 Win & ❌ Lose Screens
--   ⚠️ Invalid Input Handling
+### 🖥 Terminal Command
+<p align="center">
+  <img src="screenshots/terminal-command.jpg" width="700">
+</p>
 
-*(Add screenshots here for better visual presentation)*
+---
+
+### 🎬 Splash Screen
+<p align="center">
+  <img src="screenshots/splash-screen-1.jpg" width="700">
+  <img src="screenshots/splash-screen-2.jpg" width="700">
+  <img src="screenshots/splash-screen-3.jpg" width="700">
+</p>
+
+---
+
+### 🎯 Right & Wrong Guess Feedback
+<p align="center">
+  <img src="screenshots/right-guess.jpg" width="450">
+  <img src="screenshots/wrong-guess.jpg" width="450">
+</p>
+
+---
+
+### 🏆 Win & ❌ Lose Screens
+<p align="center">
+  <img src="screenshots/win-screen.jpg" width="450">
+  <img src="screenshots/lose-screen.jpg" width="450">
+</p>
+
+---
+
+### ⚠️ Invalid Input Handling
+<p align="center">
+  <img src="screenshots/invalid-input.jpg" width="700">
+  <img src="screenshots/invalid-input-2.jpg" width="700">
+</p>
 
 ------------------------------------------------------------------------
 
