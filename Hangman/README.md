@@ -124,7 +124,7 @@ python gui.py
 
 ### ⚠️ Invalid Input Handling
 <p align="center">
-  <img src="screenshots/invalid-input.jpg" width="700">
+  <img src="screenshots/invalid-input-1.jpg" width="700">
   <img src="screenshots/invalid-input-2.jpg" width="700">
 </p>
 
