@@ -92,7 +92,7 @@ CodeTech IT Solutions Pvt. Ltd.
 ---
 
 ## 📄 Internship Certificate
-###🏆 Successfully completed from January 5th – February 5th, 2025
+🏆 Successfully completed from January 5th – February 5th, 2025
 <p align="center">
   <img src="certificate.jpg" width="450">
 </p>
