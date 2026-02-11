@@ -107,23 +107,43 @@ streamlit run app.py
 
 ## 🎨 Screenshots
 
--   📂 Unorganized Folder
-![Unorganized Folder](screenshots/unorganised-folder.jpg)
+### 📂 Unorganized Folder
+<p align="center">
+  <img src="screenshots/unorganised-folder.jpg" width="700">
+</p>
 
--   🖥 Terminal Command
-![Terminal Command](screenshots/Terminal-Command-1.jpg)
-![Terminal Command](screenshots/Terminal-Command-2.jpg)
+---
 
--   🌐 Streamlit Interface
-![Streamlit Browser](screenshots/Streamlit-Browser.jpg)
+### 🖥 Terminal Commands
+<p align="center">
+  <img src="screenshots/Terminal-Command-1.jpg" width="450">
+  <img src="screenshots/Terminal-Command-2.jpg" width="450">
+</p>
 
--   📤 File Upload
-![Upload files](screenshots/Upload-files-1.jpg)
-![Upload files](screenshots/Upload-files-2.jpg)
+---
 
--   📁 Organized Folder
-![Organized Folder](screenshots/organised-folder.jpg)
--   🗑 Deleted Empty Folders
+### 🌐 Streamlit Interface
+<p align="center">
+  <img src="screenshots/Streamlit-Browser.jpg" width="700">
+</p>
+
+---
+
+### 📤 File Upload
+<p align="center">
+  <img src="screenshots/Upload-files-1.jpg" width="450">
+  <img src="screenshots/Upload-files-2.jpg" width="450">
+</p>
+
+---
+
+### 📁 Organized Folder & Cleanup
+<p align="center">
+  <img src="screenshots/organised-folder.jpg" width="700">
+</p>
+
+🗑 **Empty folders are automatically detected and deleted after organization**
+
 
 ------------------------------------------------------------------------
 
