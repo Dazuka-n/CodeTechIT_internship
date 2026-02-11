@@ -89,6 +89,15 @@ Python, Streamlit, yfinance, matplotlib, seaborn, JSON
 Python Development Intern\
 CodeTech IT Solutions Pvt. Ltd.
 
+---
+
+## 📄 Internship Certificate
+###🏆 Successfully completed from January 5th – February 5th, 2025
+<p align="center">
+  <img src="certficate.jpg" width="450">
+</p>
+
+
 ------------------------------------------------------------------------
 
 ⭐ This internship reflects my practical experience and readiness for
