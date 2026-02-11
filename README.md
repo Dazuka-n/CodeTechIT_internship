@@ -64,6 +64,27 @@ profit/loss, and visualize real-time stock performance.
 **Technologies Used:**\
 Python, Streamlit, yfinance, matplotlib, seaborn, JSON
 
+---
+## 🚀 Live Projects & Demos
+
+### 📁 Task Automation – File Organizer Tool
+- 🌐 **Live App:** https://task-automation.streamlit.app
+- 💻 **Source Code:** ./Task_Automation
+- 🛠 Tech: Python, Streamlit, os, shutil
+
+---
+
+### 📈 Stock Portfolio Tracker & Research Dashboard
+- 🌐 **Live App:** https://stock-portfolioo.streamlit.app
+- 💻 **Source Code:** ./Stock_Portfolio
+- 🛠 Tech: Python, Streamlit, yfinance, matplotlib, seaborn
+
+---
+
+### 🎮 Hangman Game (Desktop Application)
+- 💻 **Source Code:** ./Hangman_Game
+- 📦 **Executable:** GitHub Releases
+- 🛠 Tech: Python, Tkinter, Pygame
 ------------------------------------------------------------------------
 
 ## 🏆 Internship Completion
