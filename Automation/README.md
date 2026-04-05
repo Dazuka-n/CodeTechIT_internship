@@ -1,176 +1,234 @@
-# 🧠 Task Automation -- File Organizer Tool
+<div align="center">
 
-![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
-![Streamlit](https://img.shields.io/badge/Streamlit-Web_App-ff4b4b?logo=streamlit)
-![Automation](https://img.shields.io/badge/Type-Task_Automation-purple)
-![Status](https://img.shields.io/badge/Status-Completed-success)
-![License](https://img.shields.io/badge/License-MIT-green)
-![Internship](https://img.shields.io/badge/Internship-CodeTechIT%20Solutions-orange)
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=4,14,24&height=200&section=header&text=File%20Organizer%20Tool&fontSize=58&fontColor=ffffff&fontAlignY=50&desc=%F0%9F%97%82%EF%B8%8F%20Clutter%20in.%20%20Order%20out.%20%20Every%20time.&descAlignY=70&descSize=17&animation=blinking" width="100%"/>
 
-A smart and lightweight **File Organizer Tool** built using **Python**
-and **Streamlit** that automatically organizes files in a selected
-directory into categorized folders such as Images, Documents, Videos,
-Audio, and more.
+</div>
 
-This project was developed as part of my **Python Programming Internship
-at CodeTechIT Solutions**.
+<div align="center">
 
-------------------------------------------------------------------------
+[![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Streamlit](https://img.shields.io/badge/Streamlit-Web_UI-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io)
+[![Automation](https://img.shields.io/badge/Type-Task_Automation-8B5CF6?style=for-the-badge)](.)
+[![Status](https://img.shields.io/badge/Status-Completed_✓-22C55E?style=for-the-badge)](.)
+[![Live App](https://img.shields.io/badge/Live-task--automation.streamlit.app-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://task-automation.streamlit.app)
 
-## 🎯 Project Objective
+</div>
 
-The objective of this project is to:
+---
 
--   📁 Automatically categorize files based on file extensions
--   🧹 Clean up cluttered directories efficiently
--   🗑 Delete empty folders after organization
--   🌐 Provide a simple web interface for non-technical users
+## 🧹 What It Does
 
-------------------------------------------------------------------------
+**File Organizer Tool** is a lightweight automation utility that takes a messy, cluttered directory and sorts every file into the right folder — automatically — with zero manual effort.
 
-## 🚀 How It Works
+Point it at any folder. Click organize. Done.
 
-The project consists of **two main components**:
-
-### 🔧 Backend Logic (`logic.py`)
-
--   Detects file types using extensions
--   Moves files into appropriate category folders
--   Traverses subdirectories
--   Deletes empty folders after sorting
-
-### 🖥 Frontend Interface (`app.py`)
-
--   Built with **Streamlit**
--   Allows directory path input
--   Supports multiple file uploads
--   Displays real-time logs of operations performed
-
-------------------------------------------------------------------------
-
-## 🧰 Technologies & Libraries Used
-
-  Tool / Library   Purpose
-  ---------------- ---------------------------
-  Python           Core programming language
-  Streamlit        Web-based UI
-  os               Directory & path handling
-  shutil           File moving operations
-
-------------------------------------------------------------------------
-
-## ⚙️ Installation & Setup
-
-### 1️⃣ Install Python
-
-Download from: https://www.python.org/downloads/
-
-### 2️⃣ Install Required Library
-
-``` bash
-pip install streamlit
+```
+📁 Downloads/  (before)              📁 Downloads/  (after)
+├── resume.pdf                       ├── 📄 Documents/
+├── photo.jpg                        │   └── resume.pdf
+├── video.mp4                        ├── 🖼️ Images/
+├── script.py                        │   └── photo.jpg
+├── archive.zip                      ├── 🎬 Videos/
+└── song.mp3                         │   └── video.mp4
+                                     ├── 💻 Scripts/
+                                     │   └── script.py
+                                     ├── 📦 Archives/
+                                     │   └── archive.zip
+                                     └── 🎵 Audio/
+                                         └── song.mp3
 ```
 
-### 3️⃣ Run the Application
+Empty folders left behind? Automatically detected and deleted.
 
-``` bash
-streamlit run app.py
-```
-
-------------------------------------------------------------------------
-
-## ✨ Features
-
--   📁 **Directory Path Input**
--   📤 **Multiple File Uploads**
--   🚀 **One-Click File Organization**
--   🧾 **Log Viewer for Actions**
--   🧹 **Automatic Empty Folder Deletion**
--   🎨 **Clean, Dark-Mode UI**
-
-------------------------------------------------------------------------
+---
 
 ## 📂 File Categories
 
-  Category      Extensions
-  ------------- -----------------------
-  Images        .jpg, .png, .gif
-  Documents     .pdf, .docx, .txt
-  Videos        .mp4, .mkv, .avi
-  Audio         .mp3, .wav, .aac
-  Archives      .zip, .rar, .7z
-  Executables   .exe, .msi
-  Scripts       .py, .js, .html, .css
-  Others        Uncategorized files
+<div align="center">
 
-------------------------------------------------------------------------
+| Category | Extensions |
+|:---:|---|
+| 🖼️ Images | `.jpg` `.png` `.gif` `.bmp` `.svg` `.webp` |
+| 📄 Documents | `.pdf` `.docx` `.txt` `.xlsx` `.pptx` `.csv` |
+| 🎬 Videos | `.mp4` `.mkv` `.avi` `.mov` `.wmv` |
+| 🎵 Audio | `.mp3` `.wav` `.aac` `.flac` `.ogg` |
+| 📦 Archives | `.zip` `.rar` `.7z` `.tar` `.gz` |
+| ⚙️ Executables | `.exe` `.msi` `.dmg` |
+| 💻 Scripts | `.py` `.js` `.html` `.css` `.ts` `.sh` |
+| 📁 Others | Everything else |
+
+</div>
+
+---
+
+## 🏗️ How It Works
+
+```mermaid
+flowchart LR
+    IN([📁 Input Directory\nor Uploaded Files]) --> BE
+
+    subgraph BE [🔧 Backend — logic.py]
+        direction TB
+        SC[Scan files\ndetect extensions]
+        SC --> CAT[Map to category\nImages / Docs / Video ...]
+        CAT --> MV[Move files\nshutil.move]
+        MV --> CLN[Delete empty\nfolders]
+    end
+
+    subgraph FE [🖥️ Frontend — app.py]
+        direction TB
+        DI[Directory path input]
+        UL[Multiple file upload]
+        LG[Real-time log viewer]
+    end
+
+    FE --> BE
+    BE --> LG
+    CLN --> OUT([✅ Organized\nDirectory])
+
+    style BE fill:#1a2d4e,stroke:#3B82F6,color:#ffffff
+    style FE fill:#1a3a2a,stroke:#22C55E,color:#ffffff
+```
+
+---
+
+## 🗂️ Project Structure
+
+```
+Task_Automation/
+├── app.py          ← Streamlit web interface
+├── logic.py        ← File detection, moving, cleanup logic
+├── requirements.txt
+└── screenshots/
+    ├── unorganised-folder.jpg
+    ├── Terminal-Command-1.jpg
+    ├── Terminal-Command-2.jpg
+    ├── Streamlit-Browser.jpg
+    ├── Upload-files-1.jpg
+    ├── Upload-files-2.jpg
+    └── organised-folder.jpg
+```
+
+---
+
+## 🛠️ Tech Stack
+
+<div align="center">
+
+[![Python](https://skillicons.dev/icons?i=python)](https://python.org)
+
+| Tool | Role |
+|---|---|
+| **Python** | Core language |
+| **Streamlit** | Web-based UI — directory input, file upload, log display |
+| **os** | Directory traversal and path handling |
+| **shutil** | File move operations |
+
+</div>
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Install
+
+```bash
+pip install streamlit
+```
+
+### 2️⃣ Run
+
+```bash
+streamlit run app.py
+```
+
+✅ Opens at `http://localhost:8501`
+
+---
+
+## ✨ Features
+
+| Feature | Description |
+|---|---|
+| 📁 **Directory Input** | Paste any local path to organize an existing folder |
+| 📤 **File Upload** | Upload multiple files directly via the browser |
+| 🚀 **One-Click Organize** | Single button triggers full sort + cleanup |
+| 🧾 **Live Log Viewer** | Real-time action log — see every file move as it happens |
+| 🧹 **Empty Folder Cleanup** | Automatically removes leftover empty directories |
+| 🎨 **Dark Mode UI** | Clean, minimal dark-themed interface |
+
+---
 
 ## 🎨 Screenshots
 
-### 📂 Unorganized Folder
+### 📂 Before — Unorganized Folder
 <p align="center">
-  <img src="screenshots/unorganised-folder.jpg" width="700">
+  <img src="screenshots/unorganised-folder.jpg" width="700"/>
 </p>
 
 ---
 
-### 🖥 Terminal Commands
+### 🖥️ Running the App
 <p align="center">
-  <img src="screenshots/Terminal-Command-1.jpg" width="450">
-  <img src="screenshots/Terminal-Command-2.jpg" width="450">
+  <img src="screenshots/Terminal-Command-1.jpg" width="450"/>
+  &nbsp;
+  <img src="screenshots/Terminal-Command-2.jpg" width="450"/>
 </p>
 
 ---
 
 ### 🌐 Streamlit Interface
 <p align="center">
-  <img src="screenshots/Streamlit-Browser.jpg" width="700">
+  <img src="screenshots/Streamlit-Browser.jpg" width="700"/>
 </p>
 
 ---
 
-### 📤 File Upload
+### 📤 File Upload in Action
 <p align="center">
-  <img src="screenshots/Upload-files-1.jpg" width="450">
-  <img src="screenshots/Upload-files-2.jpg" width="450">
+  <img src="screenshots/Upload-files-1.jpg" width="450"/>
+  &nbsp;
+  <img src="screenshots/Upload-files-2.jpg" width="450"/>
 </p>
 
 ---
 
-### 📁 Organized Folder & Cleanup
+### ✅ After — Organized Folder
 <p align="center">
-  <img src="screenshots/organised-folder.jpg" width="700">
+  <img src="screenshots/organised-folder.jpg" width="700"/>
 </p>
 
-🗑 **Empty folders are automatically detected and deleted after organization**
+> 🗑️ Empty folders are automatically detected and deleted after organization.
 
+---
 
-------------------------------------------------------------------------
+## 💡 Key Learnings
 
-## 💡 Learnings
+- File system automation with Python (`os`, `shutil`)
+- Directory traversal and recursive cleanup logic
+- Building user-friendly tools with Streamlit
+- Handling edge cases — locked files, duplicates, unknown extensions
 
--   File system automation with Python
--   Directory traversal and cleanup logic
--   Building user-friendly tools with Streamlit
--   Handling edge cases and errors gracefully
+---
 
-------------------------------------------------------------------------
+## 📌 Roadmap
 
-## 📌 Future Enhancements
+- [ ] Custom category creation by user
+- [ ] Undo / rollback last organization
+- [ ] Scheduled automation (cron / task scheduler)
+- [ ] Cloud storage support (Google Drive, Dropbox)
+- [ ] Drag-and-drop file interface
 
--   Custom category creation
--   Undo / rollback feature
--   Scheduling automation tasks
--   Cloud & cross-platform support
--   Drag-and-drop file support
+---
 
-------------------------------------------------------------------------
+<div align="center">
 
-## 🧑‍💻 Author
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=4,14,24&height=80&section=footer" width="100%"/>
 
-**Krishna**\
-Python Programming Intern -- CodeTechIT Solutions
+**Krishna** · Python Programming Intern · CodeTech IT Solutions
 
-------------------------------------------------------------------------
+[![Live App](https://img.shields.io/badge/Try_it_Live-task--automation.streamlit.app-FF4B4B?style=flat-square&logo=streamlit)](https://task-automation.streamlit.app)
 
-⭐ If you found this project useful, give it a star!
+⭐ Found this useful? Give it a star!
+
+</div>
