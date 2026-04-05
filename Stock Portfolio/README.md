@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=shark&color=gradient&customColorList=20,21,22&height=220&section=header&text=Stock%20Portfolio%20Tracker&fontSize=52&fontColor=00FF88&fontAlignY=60&desc=Real-time%20investment%20dashboard%20%C2%B7%20P%26L%20%C2%B7%20Charts%20%C2%B7%20Live%20Market%20Data&descAlignY=78&descSize=16&animation=fadeIn&stroke=00FF88&strokeWidth=1" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=shark&color=gradient&customColorList=20,21,22&height=220&section=header&text=Stock%20Portfolio%20Tracker&fontSize=52&fontColor=00FF88&fontAlignY=60&desc=Real-time%20investment%20dashboard%20%C2%B7%20P%2FL%20%C2%B7%20Charts%20%C2%B7%20Live%20Market%20Data&descAlignY=78&descSize=16&animation=fadeIn&stroke=00FF88&strokeWidth=1" width="100%"/>
 
 </div>
 
