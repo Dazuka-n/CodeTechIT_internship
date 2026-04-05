@@ -1,179 +1,266 @@
-# 🎮 Hangman Game --- Python Mini Project
+<div align="center">
 
-![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
-![Tkinter](https://img.shields.io/badge/GUI-Tkinter-orange)
-![Pygame](https://img.shields.io/badge/Audio-Pygame-green)
-![Status](https://img.shields.io/badge/Status-Completed-success)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
-![Internship](https://img.shields.io/badge/Internship-CodeTechIT%20Solutions-red)
+<img src="https://capsule-render.vercel.app/api?type=cylinder&color=gradient&customColorList=1,2,3&height=200&section=header&text=%F0%9F%8E%AE%20Hangman&fontSize=72&fontColor=FFD700&fontAlignY=55&desc=Python%20%C2%B7%20Tkinter%20%C2%B7%20Pygame%20%C2%B7%20Classic%20word%20game%20reimagined&descAlignY=78&descSize=16&animation=blinking&stroke=FFD700&strokeWidth=2" width="100%"/>
 
-A fun and interactive **Hangman Game** built using **Python** and
-**Tkinter**, featuring difficulty levels, real-time word fetching, audio
-feedback, and a clean graphical interface.
+</div>
 
-This project was developed as part of my **Python Programming Internship
-at CodeTechIT Solutions**.
+<div align="center">
 
-------------------------------------------------------------------------
+[![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Tkinter](https://img.shields.io/badge/Tkinter-GUI-FF8C00?style=for-the-badge&logo=python&logoColor=white)](https://docs.python.org/3/library/tkinter.html)
+[![Pygame](https://img.shields.io/badge/Pygame-Audio-22C55E?style=for-the-badge&logo=python&logoColor=white)](https://pygame.org)
+[![Requests](https://img.shields.io/badge/Requests-Word_API-8B5CF6?style=for-the-badge&logo=python&logoColor=white)](https://pypi.org/project/requests/)
+[![Status](https://img.shields.io/badge/Status-Completed_✓-FFD700?style=for-the-badge)](.)
+[![License](https://img.shields.io/badge/License-MIT-lightgrey?style=for-the-badge)](LICENSE)
 
-## 🧠 Objective
+</div>
 
-The objective of this project was to implement the classic **Hangman**
-game while combining: - Backend game logic - GUI-based interaction - API
-integration - Audio feedback
+---
 
-This project strengthened my understanding of **OOP**, **event-driven
-programming**, **GUI design**, and **multithreading** in Python.
+## 🎮 What It Is
 
-------------------------------------------------------------------------
+**Hangman** is the classic word-guessing game — fully rebuilt in Python with a polished GUI, real-time word fetching from a live API, difficulty levels, and audio feedback for every guess.
 
-## 🛠 Technologies & Libraries Used
+```
+_ _ _ _ _ _ _     ← guess the word before you run out of lives
 
-  Component   Description
-  ----------- -------------------------------------------
-  Python      Core programming language
-  Tkinter     GUI framework
-  Pygame      Sound effects & background music
-  Requests    Fetch random words from external API
-  Threading   Prevent UI blocking during audio playback
+  Wrong guesses:  B  Z  Q  X       Lives left: 3 / 6
+  Difficulty:     HARD             Word length: 7 letters
 
-------------------------------------------------------------------------
-
-## 📂 Project Structure
-
-``` text
-Hangman/
-│── gui.py          # Main GUI application
-│── logic.py        # Game logic & rules
-│── sounds/         # Sound effects & music
-│── assets/         # Images / UI assets (if any)
-│── requirements.txt
-│── README.md
+  [ A ] [ B ] [ C ] [ D ] [ E ] ...
 ```
 
-------------------------------------------------------------------------
+Pick a difficulty. Start guessing. Don't get hanged.
 
-## ⚙️ Features
+---
 
--   🎚 **Difficulty Levels** -- Easy, Medium, Hard (dynamic lives & word
-    length)
--   🔊 **Audio Feedback** -- Correct/incorrect guess, win/loss sounds
--   🧠 **Smart Word Logic** -- API-based word fetch with offline
-    fallback
--   💻 **Responsive GUI** -- Built with Tkinter widgets
--   🧵 **Multithreading** -- Smooth audio without freezing UI
--   ❌ **Robust Error Handling** -- Handles invalid input & API failures
+## ✨ Features
 
-------------------------------------------------------------------------
+<div align="center">
 
-## 🔧 Setup Instructions
+| Feature | Details |
+|---|---|
+| 🎚️ **Difficulty Levels** | Easy · Medium · Hard — dynamic lives and word length per level |
+| 🔊 **Audio Feedback** | Correct guess · wrong guess · win · lose — all with sound effects |
+| 🎵 **Background Music** | Continuous Pygame audio playback throughout gameplay |
+| 🧠 **Smart Word Fetching** | Live random words from external API with offline fallback |
+| 💻 **Responsive GUI** | Full Tkinter-based graphical interface — no terminal play |
+| 🧵 **Multithreading** | Audio runs in separate thread — UI never freezes |
+| ❌ **Error Handling** | Invalid input, duplicate guesses, and API failures handled gracefully |
+| 📦 **Portable** | Packaged as `.exe` via PyInstaller — no Python install needed |
 
-### 1️⃣ Install Python
+</div>
 
-Download from: https://www.python.org/
+---
 
-### 2️⃣ Install Required Libraries
+## 🎯 How to Play
 
-``` bash
+```
+1.  Launch the game  →  splash screen appears
+2.  Select difficulty  →  Easy / Medium / Hard
+3.  A random word is fetched from the API (or fallback list)
+4.  Guess one letter at a time using the on-screen keyboard
+5.  ✅ Correct guess  →  letter reveals + sound plays
+    ❌ Wrong guess    →  hangman draws + life lost + sound plays
+6.  Win  →  reveal the word + win screen + win sound
+    Lose →  game over screen + lose sound + word revealed
+```
+
+---
+
+## 🏗️ Architecture
+
+```mermaid
+flowchart TD
+    U([👤 Player]) -->|clicks letter| GUI[gui.py\nTkinter GUI]
+
+    GUI --> LG
+
+    subgraph LG [🧠 Game Logic — logic.py]
+        direction TB
+        WF[Word Fetcher\nrequests → API]
+        WF -->|fallback| WL[Offline word list]
+        WF --> GM[Game State\nlives · guesses · word]
+        GM --> WIN{Win / Lose?}
+    end
+
+    subgraph AU [🔊 Audio — Pygame]
+        direction LR
+        BG[Background Music\nthreaded loop]
+        SFX[Sound Effects\ncorrect · wrong · win · lose]
+    end
+
+    WIN -->|correct| SFX
+    WIN -->|wrong| SFX
+    WIN -->|game over| GOS[Win / Lose Screen]
+    GUI <--> AU
+
+    style LG fill:#1a1a0a,stroke:#FFD700,color:#ffffff
+    style AU fill:#0a1a0a,stroke:#22C55E,color:#ffffff
+```
+
+---
+
+## 🎚️ Difficulty Levels
+
+<div align="center">
+
+| Level | Lives | Word Length | Vibe |
+|:---:|:---:|:---:|---|
+| 🟢 Easy | 8 | Short (3–5 letters) | Learning the game |
+| 🟡 Medium | 6 | Medium (6–8 letters) | Standard experience |
+| 🔴 Hard | 4 | Long (9+ letters) | For the brave |
+
+</div>
+
+---
+
+## 🗂️ Project Structure
+
+```
+Hangman/
+├── gui.py              ← Main Tkinter application + event handling
+├── logic.py            ← Game rules, word fetch, state management
+├── sounds/             ← Audio assets
+│   ├── background.mp3  ← Background music (looped)
+│   ├── correct.wav     ← Correct guess sound
+│   ├── wrong.wav       ← Wrong guess sound
+│   ├── win.wav         ← Win sound
+│   └── lose.wav        ← Lose sound
+├── assets/             ← UI images / hangman stage graphics
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## 🛠️ Tech Stack
+
+<div align="center">
+
+[![Python](https://skillicons.dev/icons?i=python)](https://python.org)
+
+| Tool | Role |
+|---|---|
+| **Python** | Core language |
+| **Tkinter** | GUI framework — windows, buttons, labels, canvas |
+| **Pygame** | Background music + sound effect playback |
+| **Requests** | Live word fetch from external random word API |
+| **Threading** | Runs audio in a separate thread — keeps UI responsive |
+
+</div>
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Install Dependencies
+
+```bash
 pip install pygame requests
 ```
 
-> Note: `tkinter` comes pre-installed with most Python versions.
+> `tkinter` ships with Python — no separate install needed.
 
-### 3️⃣ Run the Game
+### 2️⃣ Run the Game
 
-``` bash
+```bash
 python gui.py
 ```
 
-------------------------------------------------------------------------
+---
 
 ## 🎨 Screenshots
 
-### 🖥 Terminal Command
+### 🖥️ Launch
+
 <p align="center">
-  <img src="screenshots/terminal-command.jpg" width="700">
+  <img src="screenshots/terminal-command.jpg" width="700"/>
 </p>
 
 ---
 
 ### 🎬 Splash Screen
+
 <p align="center">
-  <img src="screenshots/splash-screen-1.jpg" width="700">
-  <img src="screenshots/splash-screen-2.jpg" width="700">
-  <img src="screenshots/splash-screen-3.jpg" width="700">
+  <img src="screenshots/splash-screen-1.jpg" width="700"/>
+  <img src="screenshots/splash-screen-2.jpg" width="700"/>
+  <img src="screenshots/splash-screen-3.jpg" width="700"/>
 </p>
 
 ---
 
-### 🎯 Right & Wrong Guess Feedback
+### 🎯 Correct vs Wrong Guess
 
 <table align="center">
   <tr>
     <td align="center">
-      <img src="screenshots/right-guess.jpg" width="420"><br>
-      <em>Correct Guess</em>
+      <img src="screenshots/right-guess.jpg" width="420"/><br/>
+      <em>✅ Correct Guess</em>
     </td>
     <td align="center">
-      <img src="screenshots/wrong-guess.jpg" width="420"><br>
-      <em>Wrong Guess</em>
+      <img src="screenshots/wrong-guess.jpg" width="420"/><br/>
+      <em>❌ Wrong Guess</em>
     </td>
   </tr>
 </table>
->
 
 ---
 
-### 🏆 Win & ❌ Lose Screens
+### 🏆 Win and Lose Screens
 
 <table align="center">
   <tr>
     <td align="center">
-      <img src="screenshots/win-screen.jpg" width="420"><br>
-      <em>Win Screen</em>
+      <img src="screenshots/win-screen.jpg" width="420"/><br/>
+      <em>🏆 You Win!</em>
     </td>
     <td align="center">
-      <img src="screenshots/lose-screen.jpg" width="420"><br>
-      <em>Lose Screen</em>
+      <img src="screenshots/lose-screen.jpg" width="420"/><br/>
+      <em>💀 Game Over</em>
     </td>
   </tr>
 </table>
-
 
 ---
 
 ### ⚠️ Invalid Input Handling
+
 <p align="center">
-  <img src="screenshots/invalid-input-1.jpg" width="700">
-  <img src="screenshots/invalid-input-2.jpg" width="700">
+  <img src="screenshots/invalid-input-1.jpg" width="700"/>
+  <img src="screenshots/invalid-input-2.jpg" width="700"/>
 </p>
 
-------------------------------------------------------------------------
+---
 
 ## 💡 Key Learnings
 
--   Applied **OOP principles** in a real project
--   Designed interactive GUIs with **Tkinter**
--   Integrated **live API data**
--   Improved responsiveness using **threading**
--   Enhanced UX with **audio integration**
+- Applied **OOP principles** across gui.py and logic.py separation
+- Designed interactive GUIs with **Tkinter** — event-driven architecture
+- Integrated **live API data** with a graceful offline fallback
+- Used **threading** to keep audio non-blocking — smooth UX throughout
+- Enhanced UX with **Pygame audio** — sounds tied to game state changes
 
-------------------------------------------------------------------------
+---
 
-## 📌 Future Improvements
+## 📌 Roadmap
 
--   🏆 Leaderboard / Score tracking
--   🎨 Enhanced UI with images & animations
--   📦 Convert into `.exe` using **PyInstaller**
--   🌐 Online multiplayer mode (stretch goal)
+- [ ] 🏆 Leaderboard and score tracking across sessions
+- [ ] 🎨 Animated hangman stages with images
+- [ ] 📦 `.exe` build via PyInstaller for distribution
+- [ ] 🌐 Online multiplayer mode
+- [ ] 🗂️ Category-based word selection (Animals, Tech, Sports...)
 
-------------------------------------------------------------------------
+---
 
-## 🧑‍💻 Author
+<div align="center">
 
-**Krishna**\
-Python Programming Intern -- CodeTechIT Solutions
+<img src="https://capsule-render.vercel.app/api?type=cylinder&color=gradient&customColorList=1,2,3&height=100&section=footer&reversal=true" width="100%"/>
 
-------------------------------------------------------------------------
+**Krishna** · Python Programming Intern · CodeTechIT Solutions
 
-⭐ If you enjoyed this project, feel free to give it a star!
+*Can you guess the word before it's too late?*
+
+⭐ If you enjoyed this project, give it a star!
+
+</div>
